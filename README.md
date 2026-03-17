@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-IEEE%20TMI-blue" alt="status">
+  <img src="https://img.shields.io/badge/Accepted-IEEE%20TMI-blue" alt="status">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue" alt="python">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="license">
 </p>
