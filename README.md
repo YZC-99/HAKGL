@@ -33,7 +33,7 @@ The framework mainly consists of:
 ## 🖼️ Framework
 
 <p align="center">
-  <img src="assets/framework.png" alt="HAKGL Framework" width="95%">
+  <img src="framework.png" alt="HAKGL Framework" width="95%">
 </p>
 
 <p align="center">
