@@ -37,7 +37,7 @@ The framework mainly consists of:
 </p>
 
 <p align="center">
-  <em>Overall framework of HAKGL. Please place your main architecture figure at <code>assets/framework.png</code>.</em>
+  <em>Overall framework of HAKGL. Please place your main architecture figure at <code>./framework.png</code>.</em>
 </p>
 
 ---
