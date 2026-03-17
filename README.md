@@ -1,91 +1,130 @@
-
 <p align="center">
-  <img src="https://img.shields.io/badge/status-under review-orange" alt="status">
-  <img src="https://img.shields.io/badge/python-3.9+-blue" alt="python">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
+  <img src="https://img.shields.io/badge/Status-IEEE%20TMI-blue" alt="status">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-blue" alt="python">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="license">
 </p>
 
-<h1 align="center">🔬 HAKGL</h1>
+<h1 align="center">HAKGL</h1>
+
 <p align="center">
-  <b>Hierarchy-Aware and Knowledge-Guided Learning for Multi-Label Classification of Retinal Diseases</b>
+  <b>Hierarchy-Aware and Knowledge-Guided Learning for Multi-Label Classification of Retinal Diseases from Fundus Images</b>
+</p>
+
+<p align="center">
+  Official implementation of our IEEE Transactions on Medical Imaging paper.
 </p>
 
 ---
 
-> 🔧 This is the official implementation of our paper **HAKGL**. The full code will be further refined and released upon our paper's acceptance and publication.
+## ✨ Overview
 
-[comment]: <> (## 📘 Overview)
+**HAKGL** is a hierarchy-aware and knowledge-guided learning framework for **multi-label retinal disease classification** from fundus images.  
+It explicitly incorporates both **hierarchical disease structure** and **medical prior knowledge** to improve label correlation modeling and enhance recognition performance in real-world retinal disease analysis.
 
-[comment]: <> (**HAKGL** introduces a novel dual-guided learning framework for fundus image analysis:)
+The framework mainly consists of:
 
-[comment]: <> (- **HCCL**: Hierarchically Consistent Correlation Learning)
+- **Hierarchical Transformer** for structured representation learning
+- **HCCL**: *Hierarchically Consistent Correlation Learning*
+- **KGCL**: *Knowledge-Guided Correlation Learning*
 
-[comment]: <> (- **KGCL**: Knowledge-Guided Correlation Learning)
+> This repository is the official implementation of our paper.  
+---
 
-[comment]: <> (These components work jointly to enhance multi-label classification performance on retinal diseases using hierarchical prior and medical knowledge.)
+## 🖼️ Framework
 
-[comment]: <> (---)
+<p align="center">
+  <img src="assets/framework.png" alt="HAKGL Framework" width="95%">
+</p>
 
-## 🧠 Key Components
-
-### 📂 Hierarchical Transformer
-> File: `./models/hierarchicaltransformer.py`
-
-### 🔁 HCCL - Hierarchically Consistent Correlation Learning
-> File: `./loss.py`
-
-### 📚 KGCL - Knowledge-Guided Correlation Learning
-> File: `./loss.py`
+<p align="center">
+  <em>Overall framework of HAKGL. Please place your main architecture figure at <code>assets/framework.png</code>.</em>
+</p>
 
 ---
 
-## 🗂️ Datasets
+---
 
-We train and evaluate on the following public datasets:
+## 🧠 Method Components
 
-- 📑 **[ODIR Dataset]**  
-  *N. Li, T. Li et al., “A benchmark of ocular disease intelligent recognition:
-One shot for multi-disease detection,” in Benchmarking, Measuring,
-and Optimizing: Third BenchCouncil International Symposium, Bench
-2020, Virtual Event, November 15–16, 2020, Revised Selected Papers 3.
-Springer, 2021, pp. 177–193.*
+### 1. Hierarchical Transformer
+Structured visual representation learning with explicit hierarchical awareness.
 
-- 📑 **[RFMID Dataset]**  
-  *S. Pachade, P. Porwal et al., “Retinal fundus multi-disease image dataset
-(rfmid): A dataset for multi-disease detection research,” Data, vol. 6,
-no. 2, p. 14, 2021.*
+- **File**: `./models/hierarchicaltransformer.py`
 
-- 📑 **[Kaggle Diabetic Retinopathy]**  
-  - *E. Dugas, Jared, Jorge et al., “Diabetic retinopathy detection,” 2015,
-kaggle.* [Kaggle Competition Link](https://kaggle.com/competitions/diabetic-retinopathy-detection)
-  
-  - *L. Ju, X. Wang et al., “Improving medical images classification with
-label noise using dual-uncertainty estimation,” IEEE Transactions on
-Medical Imaging, vol. 41, no. 6, pp. 1533–1546, 2022.*
-  
- 
+### 2. HCCL — Hierarchically Consistent Correlation Learning
+Encourages prediction consistency with hierarchical disease relations.
+
+- **File**: `./loss.py`
+
+### 3. KGCL — Knowledge-Guided Correlation Learning
+Introduces external medical knowledge to regularize disease correlation learning.
+
+- **File**: `./loss.py`
 
 ---
 
-## 🌳 Hierarchical Tree Construction References
+## 📂 Supported Datasets
 
-- **Ju et al., IEEE TMI 2022**: Improving medical images classification with
-label noise using dual-uncertainty estimation 
-- **Ju et al., IEEE TMI 2023**: Hierarchical knowledge guided learning for
-real-world retinal disease recognition
+We train and evaluate HAKGL on the following public retinal fundus datasets:
+
+### **ODIR**
+> Li, N., Li, T., et al.  
+> *A benchmark of ocular disease intelligent recognition: One shot for multi-disease detection.*  
+> BenchCouncil International Symposium, 2021.
+
+### **RFMiD**
+> Pachade, S., Porwal, P., et al.  
+> *Retinal fundus multi-disease image dataset (RFMiD): A dataset for multi-disease detection research.*  
+> *Data*, 2021.
+
+### **Kaggle Diabetic Retinopathy**
+> Dugas, E., Jared, J., Jorge, et al.  
+> *Diabetic Retinopathy Detection.* Kaggle, 2015.  
+> [Competition Link](https://kaggle.com/competitions/diabetic-retinopathy-detection)
+
+Related processing protocol:
+> Ju, L., Wang, X., et al.  
+> *Improving medical images classification with label noise using dual-uncertainty estimation.*  
+> *IEEE Transactions on Medical Imaging*, 2022.
+
+---
+
+## 🌳 Hierarchical Prior Construction
+
+The hierarchical tree design in this work is inspired by prior retinal disease recognition studies, including:
+
+- **Ju et al., IEEE TMI 2022**  
+  *Improving medical images classification with label noise using dual-uncertainty estimation*
+
+- **Ju et al., IEEE TMI 2023**  
+  *Hierarchical knowledge guided learning for real-world retinal disease recognition*
+
+---
+
+
+## 📌 Citation
+
+If you find this work useful in your research, please cite:
+
+```bibtex
+@article{yang2026hierarchy,
+  title={Hierarchy-Aware and Knowledge-Guided Learning for Multi-Label Classification of Retinal Diseases from Fundus Images},
+  author={Yang, Zhaocan and Li, Yan and Liu, Yang},
+  journal={IEEE Transactions on Medical Imaging},
+  year={2026},
+  publisher={IEEE}
+}
+```
 
 ---
 
 ## 🙏 Acknowledgements
 
-We thank the authors of:
+We sincerely thank the authors of the following open-source projects:
+
 - [Query2Label](https://github.com/SlongLiu/query2labels)
 - [HLEG](https://github.com/ShiQingHongYa/HLEG)
 
-for their open-source contributions.
+for their valuable contributions to the community.
 
----
 
-## 🚧 Ongoing Work
-
-📢 Our paper is currently under peer review. We will further improve the code and contribute to the community in the future.
